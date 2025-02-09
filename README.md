@@ -7,4 +7,4 @@ A customizable and interactive developer portfolio built with React.js. Showcase
 ✔️ SEO & Open Graph metadata for better sharing
 ✔️ Responsive & clean UI
 
-🔗 Live Demo: https://vercel.com/ajaykumarmashaparis-projects/my-portfolio/GEZJthqyZ9GMAprGfFS2xuzZDuTj
+🔗 Live Demo: https://my-portfolio-git-master-ajaykumarmashaparis-projects.vercel.app/education
