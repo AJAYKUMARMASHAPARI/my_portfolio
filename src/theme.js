@@ -15,7 +15,7 @@ export const blueTheme = {
 
 export const brownTheme = {
   body: "#FFFEFD",
-  text: "#5D2A42",
+  text: "#001C55",
   expTxtColor: "#000a12",
   highlight: "#FFF9EC",
   dark: "#00072D",
@@ -154,15 +154,15 @@ export const yellowTheme = {
 };
 
 export const materialDarkTheme = {
-  body: "#263238",
-  text: "#aeaeae",
+  body: "#091f34",
+  text: "#eff9f0",
   expTxtColor: "#000a12",
   highlight: "#4f5b62",
   dark: "#000a12",
   secondaryText: "#aeaeae",
-  imageHighlight: "#607d8b",
+  imageHighlight: "#ffb703",
   compImgHighlight: "#E6E6E6",
-  jacketColor: "#8eacbb",
+  jacketColor: "#000a12",
   headerColor: "#34515e",
   splashBg: "#4f5b62",
 };
@@ -195,4 +195,18 @@ export const materialTealTheme = {
   splashBg: "#05505E",
 };
 
-export const chosenTheme = blueTheme;
+export const customTheme = {
+  body: "#0D0D0D", // Deep black background
+  text: "#FFFFFF", // Main text in white
+  expTxtColor: "#FFFFFF", // Light gray for experience section (not too bright)
+  highlight: "#FFD700", // Gold for accents
+  dark: "#1A1A1A", // Slightly lighter black for contrast
+  secondaryText: "#FFFFFF", // Light gray for job descriptions (not pure white)
+  imageHighlight: "transparent", // No overlay on logos
+  compImgHighlight: "#FFFFFF", // Dark gray behind logos
+  jacketColor: "#222222", // Slightly lighter than body for contrast
+  headerColor: "#FFD70099", // Gold with transparency for a sleek effect
+  splashBg: "#0D0D0D", // Keep splash background deep black
+};
+
+export const chosenTheme = customTheme;

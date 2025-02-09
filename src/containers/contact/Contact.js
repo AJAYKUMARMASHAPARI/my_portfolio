@@ -7,6 +7,7 @@ export default function Contact() {
   return (
     <div className="main contact-margin-top" id="contact">
       <div className="contact-div-main">
+        {/* Left Section - Contact Info */}
         <div className="contact-header">
           <h1 className="heading contact-title">{contactInfo.title}</h1>
           <p className="subTitle contact-subtitle">{contactInfo.subtitle}</p>
@@ -28,11 +29,14 @@ export default function Contact() {
             <SocialMedia />
           </div>
         </div>
+
+        {/* Right Section - Profile Image */}
         <div className="contact-image-div">
           <img
-            alt="Saad Working"
+            className="contact-profile-img"
+            alt="Ajay Mashapari"
             src={require("../../assets/images/contactMail.png")}
-          ></img>
+          />
         </div>
       </div>
     </div>

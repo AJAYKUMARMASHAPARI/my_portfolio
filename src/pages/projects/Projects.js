@@ -1,20 +1,26 @@
 import React, { Component } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
-import GithubRepoCard from "../../components/githubRepoCard/GithubRepoCard";
-import PublicationCard from "../../components/publicationsCard/PublicationCard";
 import Button from "../../components/button/Button";
 import TopButton from "../../components/topButton/TopButton";
 import { Fade } from "react-reveal";
-import {
-  greeting,
-  projectsHeader,
-  publicationsHeader,
-  publications,
-} from "../../portfolio.js";
-import ProjectsData from "../../shared/opensource/projects.json";
-import "./Projects.css";
+import { greeting, projectsHeader } from "../../portfolio.js";
 import ProjectsImg from "./ProjectsImg";
+import "./Projects.css";
+
+let projectsData = [];
+try {
+  projectsData = require("../../shared/opensource/projects.json").data;
+} catch (error) {
+  console.warn("Projects data file not found or empty. Using fallback.");
+}
+
+// Function to extract Month & Year from date
+const getMonthYear = (dateString) => {
+  if (!dateString) return "Ongoing";
+  const date = new Date(dateString);
+  return date.toLocaleString("default", { month: "short", year: "numeric" }); // Example: "Oct 2023"
+};
 
 class Projects extends Component {
   render() {
@@ -26,10 +32,6 @@ class Projects extends Component {
           <Fade bottom duration={2000} distance="40px">
             <div className="projects-heading-div">
               <div className="projects-heading-img-div">
-                {/* <img
-											src={require(`../../assets/images/${projectsHeader["avatar_image_path"]}`)}
-											alt=""
-										/> */}
                 <ProjectsImg theme={theme} />
               </div>
               <div className="projects-heading-text-div">
@@ -43,17 +45,56 @@ class Projects extends Component {
                   className="projects-header-detail-text subTitle"
                   style={{ color: theme.secondaryText }}
                 >
-                  {projectsHeader["description"]}
+                  {projectsHeader.description}
                 </p>
               </div>
             </div>
           </Fade>
         </div>
-        <div className="repo-cards-div-main">
-          {ProjectsData.data.map((repo) => {
-            return <GithubRepoCard repo={repo} theme={theme} />;
-          })}
-        </div>
+
+        {/* ✅ Projects Grid Layout */}
+        {projectsData.length > 0 ? (
+          <div className="repo-cards-div-main">
+            {projectsData.map((project) => (
+              <div key={project.id} className="project-card">
+                <h2 style={{ color: theme.text }}>
+                  {project.name} ({getMonthYear(project.startDate)} -{" "}
+                  {getMonthYear(project.endDate)})
+                </h2>
+                <p style={{ color: theme.secondaryText }}>
+                  {project.description}
+                </p>
+
+                {/* Displaying Tech Stack */}
+                <div className="project-tech-stack">
+                  {project.languages?.map((lang, index) => (
+                    <span key={index} className="tech-item">
+                      <i className={lang.iconifyClass} /> {lang.name}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link"
+                  style={{ color: theme.highlight }}
+                >
+                  View Project
+                </a>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p
+            className="no-projects-text"
+            style={{ color: theme.secondaryText }}
+          >
+            No projects found. Check if `projects.json` is correctly linked.
+          </p>
+        )}
+
         <Button
           text={"More Projects"}
           className="project-button"
@@ -61,37 +102,6 @@ class Projects extends Component {
           newTab={true}
           theme={theme}
         />
-
-        {/* Publications  */}
-        {publications.data.length > 0 ? (
-          <div className="basic-projects">
-            <Fade bottom duration={2000} distance="40px">
-              <div className="publications-heading-div">
-                <div className="publications-heading-text-div">
-                  <h1
-                    className="publications-heading-text"
-                    style={{ color: theme.text }}
-                  >
-                    {publicationsHeader.title}
-                  </h1>
-                  <p
-                    className="projects-header-detail-text subTitle"
-                    style={{ color: theme.secondaryText }}
-                  >
-                    {publicationsHeader["description"]}
-                  </p>
-                </div>
-              </div>
-            </Fade>
-          </div>
-        ) : null}
-
-        <div className="repo-cards-div-main">
-          {publications.data.map((pub) => {
-            return <PublicationCard pub={pub} theme={theme} />;
-          })}
-        </div>
-
         <Footer theme={this.props.theme} onToggle={this.props.onToggle} />
         <TopButton theme={this.props.theme} />
       </div>

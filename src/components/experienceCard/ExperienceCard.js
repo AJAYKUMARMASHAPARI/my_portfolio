@@ -8,6 +8,7 @@ class ExperienceCard extends Component {
     const index = this.props.index;
     const totalCards = this.props.totalCards;
     const theme = this.props.theme;
+
     return (
       <div
         className="experience-list-item"
@@ -18,7 +19,8 @@ class ExperienceCard extends Component {
             <img
               className="experience-card-logo"
               src={require(`../../assets/images/${experience["logo_path"]}`)}
-              alt=""
+              alt={experience["company"]}
+              style={{ borderRadius: "10px", backgroundColor: "#FFFFFF" }} // Ensures logos are visible
             />
           </div>
         </Fade>
@@ -28,7 +30,7 @@ class ExperienceCard extends Component {
               width: 20,
               height: 20,
               backgroundColor: `${theme.headerColor}`,
-              borderRadius: 50,
+              borderRadius: "50%",
               zIndex: 100,
             }}
           />
@@ -62,20 +64,24 @@ class ExperienceCard extends Component {
                 }}
               >
                 <div>
+                  {/* Job Title */}
                   <h3
                     className="experience-card-title"
-                    style={{ color: theme.text }}
+                    style={{ color: "#FFFFFF" }} // Force white text for job titles
                   >
                     {experience["title"]}
                   </h3>
+
+                  {/* Company Name */}
                   <p
                     className="experience-card-company"
-                    style={{ color: theme.text }}
+                    style={{ color: "#FFFFFF" }} // Force white text for company name
                   >
                     <a
                       href={experience["company_url"]}
                       target="_blank"
                       rel="noopener noreferrer"
+                      style={{ textDecoration: "none", color: "#FFD700" }} // Gold link for a professional look
                     >
                       {experience["company"]}
                     </a>
@@ -83,29 +89,35 @@ class ExperienceCard extends Component {
                 </div>
                 <div>
                   <div className="experience-card-heading-right">
+                    {/* Duration */}
                     <p
                       className="experience-card-duration"
-                      style={{ color: theme.secondaryText }}
+                      style={{ color: "#FFFFFF" }} // Force white text for duration
                     >
                       {experience["duration"]}
                     </p>
+                    {/* Location */}
                     <p
                       className="experience-card-location"
-                      style={{ color: theme.secondaryText }}
+                      style={{ color: "#FFFFFF" }} // Force white text for location
                     >
                       {experience["location"]}
                     </p>
                   </div>
                 </div>
               </div>
+
+              {/* Job Description */}
               <div
                 style={{
                   display: "flex",
                   justifyContent: "flex-start",
                   marginTop: 20,
+                  color: "#FFFFFF", // Force white text for job descriptions
+                  fontSize: "14px",
+                  lineHeight: "1.6",
                 }}
               >
-                <div className="repo-description" />
                 {experience["description"]}
               </div>
             </div>

@@ -1,20 +1,28 @@
 .contact-div-main {
   display: flex;
+  align-items: center;
+  /* Ensure alignment */
+  justify-content: center;
+  /* Center the content */
+  flex-wrap: wrap;
+  /* Adjusts layout for smaller screens */
 }
 
+/* Adjust individual flex properties */
 .contact-div-main > * {
   flex: 1;
 }
 
 .contact-title {
-  font-size: 65px;
+  font-size: 60px;
   font-weight: 400;
+  text-align: center;
 }
 
 .contact-detail,
 .contact-detail-email {
   margin-top: 20px;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 400;
   color: #868e96;
   text-decoration: none;
@@ -22,52 +30,84 @@
 
 .contact-detail:hover,
 .contact-detail-email:hover {
-  color: black;
+  color: white;
   text-shadow: 2px 1px 2px #b5b5b5;
   transition: all 0.3s;
 }
 
+/* Subtitle */
 .contact-subtitle {
   text-transform: uppercase;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
 }
 
 .contact-text-div {
   margin-top: 1.5rem;
+  text-align: center;
 }
 
 .contact-margin-top {
   margin-top: 4rem;
 }
 
-.contact-image-div > img {
-  max-width: 100%;
-  height: auto;
-  margin-left: 1.5rem;
-  margin-top: -4rem;
+/* PROFILE IMAGE STYLES */
+.contact-image-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Media Query */
-@media (max-width: 1380px), (max-width: 768px) {
+.contact-image-div > img {
+  max-width: 120px;
+  /* Reduce size for consistency */
+  height: auto;
+  border-radius: 50%;
+  /* Optional: makes the image circular */
+  object-fit: cover;
+  /* Ensures image proportions */
+  display: block;
+  margin: auto;
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+  /* Optional: Add a shadow effect */
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1380px) {
   .contact-title {
-    font-size: 56px;
-    font-weight: 400;
+    font-size: 50px;
+  }
+
+  .contact-detail,
+  .contact-detail-email {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact-title {
+    font-size: 45px;
+  }
+
+  .contact-detail,
+  .contact-detail-email {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-div-main {
+    flex-direction: column;
     text-align: center;
   }
 
   .contact-title {
     font-size: 40px;
-    text-align: center;
   }
 
   .contact-subtitle {
     font-size: 16px;
-    line-height: normal;
-    text-align: center;
-  }
-
-  .contact-text-div {
-    text-align: center;
-    margin-top: 1.5rem;
   }
 
   .contact-detail,
@@ -75,7 +115,8 @@
     font-size: 20px;
   }
 
-  .contact-image-div {
-    display: none;
+  .contact-image-div img {
+    max-width: 100px;
+    /* Smaller image for mobile */
   }
 }

@@ -33,13 +33,22 @@ class ExperienceAccordion extends Component {
                   Content: {
                     style: () => ({
                       backgroundColor: `${theme.body}`,
+                      color: "#FFFFFF", // Ensures text inside the accordion is white
                     }),
                   },
                 }}
               >
-{section["experiences"].map((experience,index) => {
+                {section["experiences"].map((experience, index) => {
                   return (
-                    <ExperienceCard index={index} totalCards={section["experiences"].length} experience={experience} theme={theme} />
+                    <ExperienceCard
+                      index={index}
+                      totalCards={section["experiences"].length}
+                      experience={experience}
+                      theme={{
+                        ...theme,
+                        secondaryText: "#FFFFFF", // Ensures job description text remains white
+                      }}
+                    />
                   );
                 })}
               </Panel>
