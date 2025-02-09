@@ -6,7 +6,7 @@
       "startDate": "2024-09",
       "endDate": "2024-12",
       "url": "https://github.com/AJAYKUMARMASHAPARI/Smart-Crop-Prediction",
-      "description": "Developed a machine learning model to enhance agricultural yield forecasting. Evaluated 15+ classification and regression models to analyze the impact of weather, soil properties, and agricultural practices on crop production.",
+      "description": "Developed a machine learning model for agricultural yield forecasting. Implemented data preprocessing, feature engineering, and model evaluation to analyze the impact of weather, soil properties, and agricultural practices. Optimized classification and regression models, achieving 81.35% accuracy and R² of 0.913 in yield prediction.",
       "isFork": false,
       "languages": [
         {
@@ -16,6 +16,30 @@
         {
           "name": "Jupyter Notebook",
           "iconifyClass": "logos-jupyter"
+        },
+        {
+          "name": "Scikit-Learn",
+          "iconifyClass": "simple-icons:scikitlearn"
+        },
+        {
+          "name": "XGBoost",
+          "iconifyClass": "simple-icons:xgboost"
+        },
+        {
+          "name": "Pandas",
+          "iconifyClass": "simple-icons:pandas"
+        },
+        {
+          "name": "NumPy",
+          "iconifyClass": "simple-icons:numpy"
+        },
+        {
+          "name": "Matplotlib",
+          "iconifyClass": "simple-icons:matplotlib"
+        },
+        {
+          "name": "Seaborn",
+          "iconifyClass": "simple-icons:seaborn"
         }
       ]
     },
@@ -59,7 +83,7 @@
       "name": "Explainable CNN",
       "startDate": "2022-03",
       "endDate": "2022-06",
-      "url": "https://github.com/ashutosh1919/explainable-cnn",
+      "url": "www.linkedin.com",
       "description": "Developed a PyTorch-based visualization package for generating **layer-wise explanations for CNNs**. Enhanced model interpretability for deep learning projects.",
       "isFork": false,
       "languages": [
@@ -75,7 +99,7 @@
       "startDate": "2024-08",
       "endDate": "2025-02",
       "url": "https://github.com/ashutosh1919/masterPortfolio",
-      "description": "Developed a **customizable developer portfolio** that allows users to showcase their projects, skills, and experiences interactively.",
+      "description": "Developed a customizable and interactive developer portfolio using React.js, showcasing projects, skills, and experiences with optimized SEO.",
       "isFork": false,
       "languages": [
         {
@@ -91,8 +115,20 @@
           "iconifyClass": "logos-javascript"
         },
         {
-          "name": "Dockerfile",
+          "name": "React.js",
+          "iconifyClass": "logos-react"
+        },
+        {
+          "name": "Docker",
           "iconifyClass": "simple-icons:docker"
+        },
+        {
+          "name": "Git",
+          "iconifyClass": "logos-git"
+        },
+        {
+          "name": "Vercel",
+          "iconifyClass": "simple-icons:vercel"
         }
       ]
     },
@@ -125,10 +161,10 @@
     },
     {
       "id": "MDEwOlJlcG9zaXRvcnkzMjU5NDM1MTE=",
-      "name": "React Liquid Swipe",
+      "name": "To be Added",
       "startDate": "2024-01",
       "endDate": "2024-04",
-      "url": "https://github.com/ashutosh1919/react-liquidswipe",
+      "url": "www.google.com/projects",
       "description": "Built a **smooth liquid swipe animation** to transition between different components using React.js.",
       "isFork": false,
       "languages": [
